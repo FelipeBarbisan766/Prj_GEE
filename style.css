@@ -1,0 +1,464 @@
+/* Global */
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.nomeLogo {
+    margin-left: 0px;
+    size: 1px;
+    color: white;
+    color: rgb(0, 0, 0);
+}
+
+
+p {
+    font-size: 20px;
+}
+
+.icone {
+    vertical-align: middle;
+    height: 50px;
+    width: 50px;
+}
+
+/* ----------------------------------- */
+/* index.html */
+.topnav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5rem;
+    padding: 0px;
+}
+
+.indexTitle {
+    text-align: center;
+    margin-left: 26rem;
+    font-size: 43px;
+    color: #3685CD;
+    text-shadow: 2.5px 1.5px #000000;
+}
+
+.btn_login {
+    margin-left: 46rem;
+    background: #3685CD;
+    color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    text-decoration: none;
+    padding: 1rem 3rem;
+
+
+}
+
+#TituloPrincipal {
+    color: rgb(0, 0, 0);
+    margin: 3rem 0rem;
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: rgb(201, 196, 196) 5px 3px;
+
+}
+
+#img_Index {
+    border-radius: 5em;
+    width: 100%;
+
+}
+
+#index {
+    background-color: #ffffff;
+}
+
+.colum {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+#textoIndex {
+    margin: 0rem 3rem;
+    font-size: 2rem;
+    text-align: justify;
+    padding: 2rem;
+
+}
+
+/* ----------------------------------- */
+/* Login */
+.logo {
+    margin-top: 7rem;
+    margin-left: 96%;
+}
+
+.block_input {
+    margin: 15% 5%;
+    padding: 2% 0% 2% 2%;
+    background-color: white;
+    display: flex;
+    text-align: center;
+    border-radius: 50px;
+}
+
+::placeholder {
+    text-align: left;
+    padding-left: 3px;
+    font-size: 30px;
+}
+
+#loginContent {
+    margin: 0% 31%;
+    background-color: #9fbfdf;
+    text-align: center;
+    padding: 2%;
+    border-radius: 50px;
+    margin-bottom: 0rem;
+}
+
+.input_form {
+
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 25px;
+    padding: 1% 3%;
+    border-radius: 50px;
+    width: auto;
+    font-size: x-large;
+    height: 100%;
+    background-color: transparent;
+    border: 0px solid transparent;
+    outline: none;
+}
+
+.btn {
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    padding: 3% 40%;
+    background-color: #0e5394;
+    /*background-image: linear-gradient(to right, rgb(20, 22, 150),rgb(17, 24, 126)); /* igual a top right */
+}
+
+.checkbox {
+    margin: 0px;
+    padding-left: 0%;
+
+}
+
+.container label {
+    margin-right: 0%;
+    text-align: left;
+    padding: 1%;
+    font-size: 20px;
+    /* color:rgb(0, 140, 255); */
+
+}
+
+
+
+/* ------------------------------------- */
+/* navBar */
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #EFF2F4;
+    border-radius: 5px;
+    /* Alinhamento vertical */
+    
+}
+
+.dropbtn {
+    border: none;
+    color: rgb(61, 61, 61);
+    padding: 16px;
+    font-size: 25.7px;
+    cursor: pointer;
+    margin-left: 2rem;
+    border-radius: 5px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #60aee2;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: flex;
+    display: inline-block;
+    
+    
+}
+
+#txtBusca{
+    position: flex;
+    display: inline-block;
+    width: 37rem;
+    border-radius: 20px;
+    height: 37px;
+    margin-left:  10rem;
+    font-size: 1.5rem;
+}
+
+#txtBusca::-webkit-input-placeholder{
+    font-size: 22px;
+}
+
+.dropdown2{
+    position: flex;
+    display: inline-block;
+    
+
+}
+
+.dropbtn2{
+    border: none;
+    color: rgb(61, 61, 61);
+    padding: 16px;
+    font-size: 25.7px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 15rem;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    
+}
+
+.dropdown-content2{
+    margin-left: 13rem;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+
+/*-----------------------------------------*/
+/* paginaDeControle */
+
+li {
+    list-style-type:decimal;
+    text-align: left;
+    padding-inline-start: 3px;
+    color: #eff2f4;
+    font-size: 17px;
+}
+
+.quadradoAzul {
+    /* border: 3px solid red; */
+    background: #66a8e6;
+    color: white;
+    border-radius: 10px;
+    overflow-y: auto;
+    height: 15rem;
+}
+
+.quadradoAzul h1 {
+    font-size: 22px;
+    text-align: center;
+}
+
+.quadradoAzul::-webkit-scrollbar {
+    width: 12px;
+    
+    /* width of the entire scrollbar */
+}
+
+.quadradoAzul::-webkit-scrollbar-track {
+    background: rgb(202, 201, 201);
+    border-radius: 2px;
+    /* color of the tracking area */
+}
+
+.quadradoAzul::-webkit-scrollbar-thumb {
+    background-color: rgb(47, 47, 48);
+    /* color of the scroll thumb */
+    border-radius: 5px;
+    /* roundness of the scroll thumb */
+    border: 3px solid rgb(128, 127, 126);
+    /* creates padding around scroll thumb */
+    
+}
+
+.quadradoCinza h1{
+    font-size: 22px;
+    text-align: center;
+}
+
+.quadradoCinza {
+    background: #EFF2F4;
+    /* color: white; */
+    /* border: 3px solid red; */
+    border-radius: 15px;
+    text-align: center !important;
+}
+
+.quadradoCinza span {
+
+    display: flex;
+    justify-content: space-between
+    
+}
+
+.quadradoCinza2 {
+    text-align: center;
+    background: #EFF2F4;
+    border-radius: 10px;
+    padding-left: 0rem !important;
+    height: 15rem;
+}    
+
+.quadradoCinza2 h1{
+    font-size: 22px;
+    text-align: center;
+}
+
+.grayBoxLi{
+    text-align: center;
+    list-style: none;
+    color: #000000;
+}
+
+.alerta {
+
+    background-color: #FFDE59;
+    /* border: 1px solid black; */
+    color: rgb(0, 0, 0);
+    padding: 0.23rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    border-radius: 38px;
+    width: 4.80rem;
+
+}
+
+.alerta2{
+    background-color: #D84853;
+    /* border: 1px solid black; */
+    color: #EFF2F4;
+    padding: 0.23rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    border-radius: 38px;
+    width: 4.80rem;
+}
+
+.quadradoCinza3{
+    background: #EFF2F4;
+    border-radius: 10px;
+}
+
+
+.table{
+    --bs-table-bg: #ffffff;
+}
+
+th{
+    text-align: left;
+}
+
+td{
+    text-align: left !important;
+    
+}
+
+
+
+
+/*------------------------------------------------*/
+/* tabelaProduto */ 
+.topnav {
+    overflow: hidden;
+    background-color: transparent;
+}
+
+
+.topnav a:hover {
+    background-color: #314ab9;
+    color: rgb(255, 255, 255);
+}   
+
+.BodyTable {
+    background-color:rgb(255, 255, 255);
+}
+
+.containerProd {
+    margin: auto;
+    width: 70%;
+
+} 
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+} 
+
+td {
+    border-radius: 0px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 8px;
+    text-align: center;
+    margin: 10px;
+}
+
+th {
+
+    background-color: rgb(75, 123, 255);
+    color: rgb(0, 0, 0);
+}
+
+
+tr:nth-child(even) {
+    background-color: #aca9a9;
+}
+
+tr:hover {
+    background-color: #cfcece;
+} 
+
+/* ---------------------------------------------- */
+/* admPage */
+.container_adm {
+    background-color: #CCD6DD;
+    padding: 4rem;
+    margin: 0px;
+}
+
+.btn_adm {
+    background-color: #001233;
+    color: white;
+    border-radius: 2rem;
+    padding: 1.5rem 3.5rem;
+    text-decoration: none;
+    margin: 0rem 3rem;
+}
+
+
+
+
