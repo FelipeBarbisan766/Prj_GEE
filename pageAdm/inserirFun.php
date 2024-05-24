@@ -1,6 +1,6 @@
 <?php
 include('../conexao.php');
-$nome = $_POST['nome'];
+$nome = strtoupper($_POST['nome']);
 $cod = $_POST['codigo'];
 $cargo = $_POST['cargo'];
 $isActive = true;

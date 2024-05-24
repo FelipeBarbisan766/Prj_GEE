@@ -25,6 +25,8 @@
     <a href="formRePro.php" class="">remover produto</a>
     <a href="formReCat.php" class="">remover categoria</a>
     
+    <a href="formInFun.php" class="">Adicionar funcionario</a>
+    
     <h1>Lista de Produtos</h1>
 
     <body class="BodyTable">

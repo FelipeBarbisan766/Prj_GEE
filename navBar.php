@@ -17,7 +17,7 @@
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Categorias</button>
             <div id="myDropdown" class="dropdown-content">
-                <a href="\Prj_GEE/lista/lista.php">Lista</a>
+                <a href="\Prj_GEE/lista/lista.php">GERAL</a>
                 <?php
                 include_once ("conexao.php");
                 $slq = mysqli_query($conexao, "SELECT * FROM categoria");
@@ -34,10 +34,12 @@
             <input type="text" id="txtBusca" placeholder="Buscar..." />
         </div>
         <div class="dropdown ">
-            <button onclick="menu()" class="dropbtn dropbtn2">nome usuário</button>
+            <button onclick="menu()" class="dropbtn dropbtn2"><?php echo $_SESSION['nome'] ?></button>
             <div id="menuDrop" class="dropdown-content dropdown-content2">
                 <a href="\Prj_GEE/SobreNois.php">Sobre nós</a>
-                <a href="\Prj_GEE/pageAdm/adm.php">Configurações</a>
+                <a href="\Prj_GEE/index.php">Analistic</a>
+                <a href="\Prj_GEE/pageAdm/adm.php">Adm</a>
+                <a href="\Prj_GEE/configuracao/config.php">Configurações</a>
                 <a href="\Prj_GEE/logoff.php">Sair</a>
             </div>
         </div>

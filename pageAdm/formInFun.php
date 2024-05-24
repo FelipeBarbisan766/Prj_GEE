@@ -1,4 +1,4 @@
-<form action="inserirFun" method="post">
+<form action="inserirFun.php" method="post">
     <label for="nome">Nome:</label>
     <input type="text" name="nome" id="nome" required>
     <label for="codigo">Codigo:</label>
@@ -8,4 +8,7 @@
         <option value="ADM">ADM</option>
         <option value="AGENTE">AGENTE</option>
     </select>
+    
+    <input type="submit" value="Registrar">
+    <input type="reset" value="Limpar">
 </form>
