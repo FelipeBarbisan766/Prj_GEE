@@ -65,10 +65,10 @@
             <div class="p-3 quadradoCinza">
               <h1>Itens em Baixa Quantidade</h1>
               <?php
-              $slq = mysqli_query($conexao, "SELECT p.pro_nome as nome,p.pro_quant as quant,p.pro_IsActive as active FROM produto as p WHERE p.pro_quant<=15 and p.pro_quant>=1");
+              $slq = mysqli_query($conexao, "SELECT p.pro_nome as nome,p.pro_quant as quant,p.pro_IsActive as active,p.pro_limite as limite FROM produto as p WHERE p.pro_quant<=15 and p.pro_quant>=1");
               while ($lista = mysqli_fetch_array($slq)) {
                 if ($lista['active'] == true) {
-                  if ($lista['quant'] <= 5) {
+                  if ($lista['quant'] <= $lista['limite']) {
                     ?>
                     <span>
                       <p><?php echo $lista['nome']; ?></p>

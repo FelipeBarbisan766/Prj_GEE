@@ -18,7 +18,6 @@
     include_once("../protect.php");
     ?>
         <h1>Forms</h1>
-        <a href="formRePro.php" class="btnretirar">retirar produto</a>
         
         <div class="containerTable">
             <table class="table">
@@ -36,11 +35,11 @@
                     <?php
                     if(isset($_GET['cod'])){
                         $cod = $_GET['cod'];
-                        $slq = mysqli_query($conexao, "SELECT p.pro_cor as cor,p.pro_nome as nome,p.pro_quant as quant,p.pro_descricao as descri,c.cat_nome as nomecat,p.pro_IsActive as active,c.cat_IsActive as activecat FROM produto as p INNER JOIN categoria as c on c.cat_cod=p.cat_cod WHERE c.cat_cod=$cod");
+                        $slq = mysqli_query($conexao, "SELECT p.pro_cod as cod,p.pro_cor as cor,p.pro_nome as nome,p.pro_quant as quant,p.pro_descricao as descri,c.cat_nome as nomecat,p.pro_IsActive as active,c.cat_IsActive as activecat FROM produto as p INNER JOIN categoria as c on c.cat_cod=p.cat_cod WHERE c.cat_cod=$cod");
                     
                     }else{
 
-                        $slq = mysqli_query($conexao, "SELECT p.pro_cor as cor,p.pro_nome as nome,p.pro_quant as quant,p.pro_descricao as descri,c.cat_nome as nomecat,p.pro_IsActive as active,c.cat_IsActive as activecat FROM produto as p INNER JOIN categoria as c on c.cat_cod=p.cat_cod");
+                        $slq = mysqli_query($conexao, "SELECT p.pro_cod as cod,p.pro_cor as cor,p.pro_nome as nome,p.pro_quant as quant,p.pro_descricao as descri,c.cat_nome as nomecat,p.pro_IsActive as active,c.cat_IsActive as activecat FROM produto as p INNER JOIN categoria as c on c.cat_cod=p.cat_cod");
                     }
                     while ($lista = mysqli_fetch_array($slq)) { 
                         if($lista['active'] == true && $lista['activecat'] == true){
@@ -51,6 +50,10 @@
                             <td><?php echo $lista['descri']; ?></td>
                             <td><?php echo $lista['cor']; ?></td>
                             <td><?php echo $lista['nomecat']; ?> </td>
+                            <td>
+                                <a href="form.php?cod=<?php echo $lista['cod']; ?>&tipo=retirar" class="btnretirar">retirar produto</a>
+                                <a href="form.php?cod=<?php echo $lista['cod']; ?>&tipo=adicionar" class="btnretirar">adicionar produto</a>
+                            </td>
                         </tr>
                         
                         
