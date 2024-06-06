@@ -20,9 +20,23 @@ p {
     height: 50px;
     width: 50px;
 }
-
+/*--------------------------------------------------*/
+/* Responsividade */
+@media screen and (max-width: 700px) {
+    .topnav {
+        width: 100% !important;
+        flex-direction: column !important;
+       text-align: center !important;
+    }
+    .colum {
+        width: 100% !important;
+        flex-direction: column !important;
+    }
+}
 /* ----------------------------------- */
 /* index.html */
+
+ 
 .topnav {
     display: flex;
     flex-direction: row;
@@ -35,14 +49,14 @@ p {
     text-align: center;
     margin-left: 26rem;
     font-size: 43px;
-    color: #3685CD;
-    text-shadow: 2.5px 1.5px #000000;
+    color: #ffffff;
+    text-shadow: 2.5px 1.5px rgb(142, 138, 138);
 }
 
 .btn_login {
     margin-left: 46rem;
-    background: #3685CD;
-    color: rgb(255, 255, 255);
+    background: #ffffff;
+    color: rgb(0, 0, 0);
     border-radius: 1rem;
     text-decoration: none;
     padding: 1rem 3rem;
@@ -50,12 +64,16 @@ p {
 
 }
 
+.nomeLogoIndex{
+    color: white;
+}
+
 #TituloPrincipal {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin: 3rem 0rem;
     text-align: center;
     font-size: 3rem;
-    text-shadow: rgb(201, 196, 196) 5px 3px;
+    text-shadow: rgb(142, 138, 138) 5px 3px;
 
 }
 
@@ -66,7 +84,7 @@ p {
 }
 
 #index {
-    background-color: #ffffff;
+    background-color: #191a22;
 }
 
 .colum {
@@ -79,6 +97,7 @@ p {
     font-size: 2rem;
     text-align: justify;
     padding: 2rem;
+    color: white;
 
 }
 
@@ -128,13 +147,17 @@ p {
     outline: none;
 }
 
-.btn {
-    border-radius: 25px;
+.btnDoLogin {
+    border-radius: 55px;
     color: rgb(255, 255, 255);
-    font-size: 25px;
-    padding: 3% 40%;
+    font-size: 30px;
+    padding: 3% 3%;
     background-color: #0e5394;
     /*background-image: linear-gradient(to right, rgb(20, 22, 150),rgb(17, 24, 126)); /* igual a top right */
+    border: 1px solid black !important;
+    border-width: 2px !important;
+    width: 30rem;
+   
 }
 
 .checkbox {
@@ -230,11 +253,13 @@ p {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    
+    overflow-y: auto;
+    height: 8rem;
 }
 
-.dropdown-content2{
-    margin-left: 13rem;
+.dropMenu{
+    margin-left: 13rem; 
+    height: 6rem;
 }
 
 /* Links inside the dropdown */
@@ -257,6 +282,10 @@ p {
 
 /*-----------------------------------------*/
 /* paginaDeControle */
+.controlPage{
+    margin: 60px;
+}
+
 
 li {
     list-style-type:decimal;
@@ -313,6 +342,7 @@ li {
     /* border: 3px solid red; */
     border-radius: 15px;
     text-align: center !important;
+    height: 18rem;
 }
 
 .quadradoCinza span {
@@ -341,7 +371,7 @@ li {
     color: #000000;
 }
 
-.alerta {
+.emFalta {
 
     background-color: #FFDE59;
     /* border: 1px solid black; */
@@ -354,7 +384,7 @@ li {
 
 }
 
-.alerta2{
+.alerta{
     background-color: #D84853;
     /* border: 1px solid black; */
     color: #EFF2F4;
@@ -368,11 +398,12 @@ li {
 .quadradoCinza3{
     background: #EFF2F4;
     border-radius: 10px;
+    height: 36.39rem;
 }
 
 
 .table{
-    --bs-table-bg: #ffffff;
+    --bs-table-bg: #EFF2F4;
 }
 
 th{
@@ -384,65 +415,52 @@ td{
     
 }
 
-
-
-
-/*------------------------------------------------*/
-/* tabelaProduto */ 
-.topnav {
-    overflow: hidden;
-    background-color: transparent;
-}
-
-
-.topnav a:hover {
-    background-color: #314ab9;
-    color: rgb(255, 255, 255);
-}   
-
-.BodyTable {
-    background-color:rgb(255, 255, 255);
-}
-
-.containerProd {
-    margin: auto;
-    width: 70%;
-
-} 
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 20px;
-} 
-
-td {
-    border-radius: 0px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    padding: 8px;
-    text-align: center;
-    margin: 10px;
-}
-
-th {
-
-    background-color: rgb(75, 123, 255);
-    color: rgb(0, 0, 0);
-}
-
-
-tr:nth-child(even) {
-    background-color: #aca9a9;
-}
-
-tr:hover {
-    background-color: #cfcece;
-} 
-
 /* ---------------------------------------------- */
+/*tabelaProduto*/
+.containerTable{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tableProdHead{
+    background: #85a9ca;
+    border-radius: 10px;
+    margin: auto;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 80rem;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.tableProd{ 
+    background: #dee0e2;
+    width: 80rem ;
+    margin: auto;
+    border-radius: 10px;
+    table-layout: fixed;
+    margin-bottom: 20px;
+    font-size: 19px;
+    
+}
+
+.nomal{
+    text-align: center !important;
+    padding: 0.7em;
+    line-height: 3rem;
+    /* border: 8px solid rgb(255, 255, 255) !important; */
+    height: 18px !important;
+    border-right: 2px solid #000000 !important;
+}
+
+.different{
+    border-left: 2px solid #000000 !important;
+    border-right: none !important;
+    text-align: center !important;
+}
+
+/* ------------------------------------------------------- */
 /* admPage */
 .container_adm {
     background-color: #CCD6DD;
@@ -458,7 +476,3 @@ tr:hover {
     text-decoration: none;
     margin: 0rem 3rem;
 }
-
-
-
-

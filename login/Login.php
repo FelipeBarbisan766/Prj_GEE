@@ -26,11 +26,9 @@
             <div class="block_input">
                 <input type="password" name="txt_codigo" class="input_form" placeholder="Codigo" required>
             </div>
-            <input type="submit" value="Login" class="btn"> <br>
+            <input type="submit" value="Login" class="btnDoLogin"> <br>
             <div>
                 <input type="checkbox" value="Lembrar" class="checkbox">
-                <label for="lempre-me">Lembre-me</label>
-                <!-- checkbox de lempre-me -->
             </div>
         </form>
         <?php
@@ -74,9 +72,7 @@
                 } else {
                     echo '<div class="alert alert-danger" role="alert">
           <h4 class="alert-heading">Falha Ao Logar!</h4>
-          <p>E-mail ou senha incorretas tente novamente!</p>
-          <hr>
-          <p>Caso não lembre a senha ou não tem certeza <br> <a href="https://i.imgflip.com/737h8a.jpg" class="alert-link">Click aqui para Alterar !</a></p></div>';
+          <p>E-mail ou senha incorretas tente novamente!</p>';
                 }
             }
         }
