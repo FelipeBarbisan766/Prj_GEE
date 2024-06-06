@@ -4,6 +4,11 @@
 <head>
     <link rel="stylesheet" href="\Prj_GEE/style.css">
     <script src="\Prj_GEE/dropdown.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -31,7 +36,10 @@
             </div>
         </div>
         <div id="divBusca">
-            <input type="text" id="txtBusca" placeholder="Buscar..." />
+            <form action="\Prj_GEE/lista/lista.php" method="post">
+                <input type="text" id="txtBusca" name="buscar" placeholder="" />
+                <input type="submit" value="Buscar" class="btn btn-primary">
+            </form>
         </div>
         <div class="dropdown ">
             <button onclick="menu()" class="dropbtn dropbtn2"><?php echo $_SESSION['nome'] ?></button>

@@ -242,7 +242,7 @@ p {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: 15rem;
+    margin-left: 2rem;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -467,7 +467,11 @@ td{
     padding: 4rem;
     margin: 0px;
 }
-
+.admpage{
+    background-color: #CCD6DD;
+    margin: 40px 0px;
+    padding: 2.5rem;
+}
 .btn_adm {
     background-color: #001233;
     color: white;
@@ -475,4 +479,8 @@ td{
     padding: 1.5rem 3.5rem;
     text-decoration: none;
     margin: 0rem 3rem;
+}
+
+.alinhamento{
+    text-align: left;
 }

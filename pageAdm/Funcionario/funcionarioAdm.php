@@ -1,19 +1,22 @@
 <?php
-include_once("../../navbar.php")
+include_once ("../../conexao.php");
+include_once ("../../navBar.php");
+include_once ("../protectADM.php");
 ?>
 <div class="container">
 
-    <h1>Produtos</h1>
-    <a href="formInPro.php">Adicionar</a> 
-    <a href="formRePro.php">Remover</a>
+    <h1>Funcionario</h1>
+    <a href="formInFun.php" class="btn btn-primary">Adicionar</a> 
+    <a href="formReFun.php" class="btn btn-danger">Remover</a>
     
     <body class="BodyTable">
         <div class="containerTable">
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nome</th>
+                        <th scope="col" class="alinhamento">Id</th>
+                        <th scope="col" class="alinhamento">Nome</th>
+                        <th scope="col" class="alinhamento">Cargo</th>
                     </tr>
                 </thead>
                 <tbody>

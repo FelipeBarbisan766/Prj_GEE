@@ -18,64 +18,21 @@ include_once ("../conexao.php");
 include_once ("../navBar.php");
 include_once ("protectADM.php");
 ?>
+    <div class="admpage">
 <div class="container">
 
-    <a href="formInPro.php" class="">Produto</a>
-
-    <a href="formInCat.php" class="">Categoria</a>
-
-    <a href="formInFun.php" class="">Funcionario</a>
-
-    <a href="registo.php">Imprimir Registro</a>
-
+        
+        <a href="Produto/produtoAdm.php" class="btn btn-primary">Produto</a>
     
-<!-- Button trigger modal -->
+    <a href="Categoria/categoriaAdm.php" class="btn btn-primary">Categoria</a>
 
+<a href="Funcionario/funcionarioAdm.php" class="btn btn-primary">Funcionario</a>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="inserirPro.php" method="post">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome" required>
-                    <label for="quant">Quantidade:</label>
-                    <input type="text" name="quant" id="quant" required>
-                    <label for="desc">Descrição:</label>
-                    <input type="text" name="desc" id="desc">
-                    <label for="cor">Cor:</label>
-                    <input type="text" name="cor" id="cor">
-                    <label for="categ">Categoria:</label>
-                    <select name="categ" id="categ" required>
-                        <?php
-                        include_once ("../conexao.php");
-                        $slq = mysqli_query($conexao, "SELECT * FROM categoria");
-                        while ($categorias = mysqli_fetch_array($slq)) {
-                            if ($categorias['cat_IsActive'] == true) { ?>
+<a href="registo.php" class="btn btn-primary">Imprimir Registro</a>
 
-                                <option value="<?php echo $categorias['cat_cod']; ?>"><?php echo $categorias['cat_nome']; ?>
-                                </option>
-                            <?php }
-                        }
-                        ; ?>
-                    </select>
-                    <input type="submit" value="Registrar">
-                    <input type="reset" value="Limpar">
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
 </div>
+</div>
+
 </body>
 
 </html>

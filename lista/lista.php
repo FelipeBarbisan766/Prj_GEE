@@ -17,54 +17,60 @@
     include_once ("../conexao.php");
     include_once("../protect.php");
     ?>
-        <h1>Forms</h1>
-        
-        <div class="containerTable">
-            <table class="table">
+      <div class="container">
+
+          <div class="containerTable">
+              <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
-                        <th scope="col">Quantidade</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Cor</th>
-                        <th scope="col">Categoria</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php
+                    <th scope="col">Quantidade</th>
+                <th scope="col">Descrição</th>
+            <th scope="col">Cor</th>
+        <th scope="col">Categoria</th>
+    </tr>
+</thead>
+<tbody>
+    
+    <?php
                     if(isset($_GET['cod'])){
                         $cod = $_GET['cod'];
                         $slq = mysqli_query($conexao, "SELECT p.pro_cod as cod,p.pro_cor as cor,p.pro_nome as nome,p.pro_quant as quant,p.pro_descricao as descri,c.cat_nome as nomecat,p.pro_IsActive as active,c.cat_IsActive as activecat FROM produto as p INNER JOIN categoria as c on c.cat_cod=p.cat_cod WHERE c.cat_cod=$cod");
-                    
-                    }else{
-
-                        $slq = mysqli_query($conexao, "SELECT p.pro_cod as cod,p.pro_cor as cor,p.pro_nome as nome,p.pro_quant as quant,p.pro_descricao as descri,c.cat_nome as nomecat,p.pro_IsActive as active,c.cat_IsActive as activecat FROM produto as p INNER JOIN categoria as c on c.cat_cod=p.cat_cod");
-                    }
-                    while ($lista = mysqli_fetch_array($slq)) { 
-                        if($lista['active'] == true && $lista['activecat'] == true){
-                            ?>
+                        
+                        }elseif(isset($_POST['buscar'])){
+                            $busc = strtoupper($_POST['buscar']);
+                            $slq = mysqli_query($conexao, "SELECT p.pro_cod as cod,p.pro_cor as cor,p.pro_nome as nome,p.pro_quant as quant,p.pro_descricao as descri,c.cat_nome as nomecat,p.pro_IsActive as active,c.cat_IsActive as activecat FROM produto as p INNER JOIN categoria as c on c.cat_cod=p.cat_cod WHERE p.pro_nome LIKE '%".$busc."%'");
+                            
+                            }
+                            else{
+                                
+                                $slq = mysqli_query($conexao, "SELECT p.pro_cod as cod,p.pro_cor as cor,p.pro_nome as nome,p.pro_quant as quant,p.pro_descricao as descri,c.cat_nome as nomecat,p.pro_IsActive as active,c.cat_IsActive as activecat FROM produto as p INNER JOIN categoria as c on c.cat_cod=p.cat_cod");
+                                }
+                                while ($lista = mysqli_fetch_array($slq)) { 
+                                    if($lista['active'] == true && $lista['activecat'] == true){
+                                        ?>
                         <tr>
                             <td><?php echo $lista['nome']; ?></td>
-                            <td><?php echo $lista['quant']; ?></td>
-                            <td><?php echo $lista['descri']; ?></td>
-                            <td><?php echo $lista['cor']; ?></td>
-                            <td><?php echo $lista['nomecat']; ?> </td>
-                            <td>
-                                <a href="form.php?cod=<?php echo $lista['cod']; ?>&tipo=retirar" class="btnretirar">retirar produto</a>
-                                <a href="form.php?cod=<?php echo $lista['cod']; ?>&tipo=adicionar" class="btnretirar">adicionar produto</a>
+                        <td><?php echo $lista['quant']; ?></td>
+                    <td><?php echo $lista['descri']; ?></td>
+                <td><?php echo $lista['cor']; ?></td>
+            <td><?php echo $lista['nomecat']; ?> </td>
+        <td>
+            <a href="form.php?cod=<?php echo $lista['cod']; ?>&tipo=adicionar" class="btn btn-primary">adicionar produto</a>
+            <a href="form.php?cod=<?php echo $lista['cod']; ?>&tipo=retirar" class="btn btn-danger">retirar produto</a>
                             </td>
                         </tr>
-                        
-                        
+                    
+                    
                     <?php }}
                     ; ?>
 
 
-                </tbody>
-            </table>
-        </div>
+</tbody>
+</table>
 </div>
+</div>
+</div>  
 </body>
 
 </html>
