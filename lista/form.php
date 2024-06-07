@@ -2,16 +2,20 @@
 date_default_timezone_set('America/Sao_Paulo');
 include ('../conexao.php');
 include ('../protect.php');
+include ('../navBar.php');
 ?>
+<div class="container">
+
+    <h1><?php echo $_GET['tipo']; ?> Produto</h1>
 <form action="" method="post">
-    <label for="cod">Produto:</label>
-    <select name="cod" id="cod">
-        <?php
+    <label for="cod" class="form-label">Produto:</label>
+<select name="cod" id="cod" class="form-select" required>
+    <?php
         $slq = mysqli_query($conexao, "SELECT * FROM produto WHERE pro_cod=" . $_GET['cod'] . "");
         $produto = mysqli_fetch_array($slq)
-            ?>
+        ?>
         <option value="<?php echo $produto['pro_cod']; ?>" selected><?php echo $produto['pro_nome']; ?></option>
-        <?php
+    <?php
         $slq = mysqli_query($conexao, "SELECT * FROM produto");
         while ($produtos = mysqli_fetch_array($slq)) {
             if ($produtos['pro_IsActive'] == true && $produto['pro_cod'] != $produtos['pro_cod']) { ?>
@@ -20,17 +24,21 @@ include ('../protect.php');
         }
         ; ?>
     </select>
-    <label for="quant">Quantidade:</label>
-    <input type="number" name="quant" id="quant">
-    <input type="hidden" name="codigo" value="<?php echo $_GET['cod']; ?>">
+<label for="quant" class="form-label">Quantidade:</label>
+<input type="number" name="quant" id="quant" class="form-control" required><br>
 
-    <input type="hidden" name="tipagem" value="<?php echo $_GET['tipo']; ?>">
-    <input type="submit" value="<?php echo $_GET['tipo']; ?>">
+<input type="hidden" name="codigo" value="<?php echo $_GET['cod']; ?>">
+
+<input type="hidden" name="tipagem" value="<?php echo $_GET['tipo']; ?>">
+
+<a type="button" href="lista.php" class="btn btn-secondary">Cancelar</a>
+<input type="submit" class="btn btn-<?php if($_GET['tipo'] == 'adicionar'){echo 'primary';}else{echo 'danger';}?>" value="<?php echo $_GET['tipo']; ?>">
+
 </form>
 <?php
 if (isset($_POST['tipagem'])) {
     if ($_POST['tipagem'] == "retirar") {
-
+        
         $cod = $_POST["codigo"];
         $fun = $_SESSION["cod"];
         $data = date('Y-m-d H:i');
@@ -43,23 +51,24 @@ if (isset($_POST['tipagem'])) {
             $sqlupdate = mysqli_query($conexao, "UPDATE produto SET pro_quant='$quantFinal' WHERE pro_cod='$cod'");
             header('Location:lista.php');
             exit();
-        } else {
-            echo "Quantidade Invalida";
-        }
-    } elseif ($_POST['tipagem'] == "adicionar") {
-        $cod = $_POST["codigo"];
-        $fun = $_SESSION["cod"];
-        $data = date('Y-m-d H:i');
-        $sqlproduto = mysqli_query($conexao, "SELECT * FROM produto WHERE pro_cod='$cod'");
-        $produtos = mysqli_fetch_array($sqlproduto);
-        $quant = $_POST['quant'];
-        $quantFinal = $produtos['pro_quant'] + $quant;
-        $sqlregistro = mysqli_query($conexao, "INSERT INTO registro(fun_cod,pro_cod,reg_data,reg_quant,reg_tipo) VALUES('$fun','$cod','$data','$quant','Adicionado')");
-        $sqlupdate = mysqli_query($conexao, "UPDATE produto SET pro_quant='$quantFinal' WHERE pro_cod='$cod'");
-        header('Location:lista.php');
-        exit();
-    } else {
-
-    }
-}
-?>
+            } else {
+                echo '<br><div class="alert alert-danger" role="alert">Quantidade Invalida. O produto selecionado tem somente '.$produtos['pro_quant'].' no estoque</div>';
+                }
+                } elseif ($_POST['tipagem'] == "adicionar") {
+                    $cod = $_POST["codigo"];
+                    $fun = $_SESSION["cod"];
+                    $data = date('Y-m-d H:i');
+                    $sqlproduto = mysqli_query($conexao, "SELECT * FROM produto WHERE pro_cod='$cod'");
+                    $produtos = mysqli_fetch_array($sqlproduto);
+                    $quant = $_POST['quant'];
+                    $quantFinal = $produtos['pro_quant'] + $quant;
+                    $sqlregistro = mysqli_query($conexao, "INSERT INTO registro(fun_cod,pro_cod,reg_data,reg_quant,reg_tipo) VALUES('$fun','$cod','$data','$quant','Adicionado')");
+                    $sqlupdate = mysqli_query($conexao, "UPDATE produto SET pro_quant='$quantFinal' WHERE pro_cod='$cod'");
+                    header('Location:lista.php');
+                    exit();
+                    } else {
+                        
+                    }
+                    }
+                    ?>
+                    </div>

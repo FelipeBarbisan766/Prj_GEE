@@ -27,9 +27,6 @@
                 <input type="password" name="txt_codigo" class="input_form" placeholder="Codigo" required>
             </div>
             <input type="submit" value="Login" class="btnDoLogin"> <br>
-            <div>
-                <input type="checkbox" value="Lembrar" class="checkbox">
-            </div>
         </form>
         <?php
 
@@ -78,7 +75,7 @@
         }
         ?>
     </div>
-    <img src="img/Gaming_Logo-removebg-preview.png" alt="logo_site" class="logo" width="50em">
+    <img src="../img/logo.png" alt="logo_site" class="logo" width="70em">
     <!-- o resto eu penso depois  -->
 </body>
 

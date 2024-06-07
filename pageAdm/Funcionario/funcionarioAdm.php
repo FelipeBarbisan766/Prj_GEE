@@ -7,7 +7,7 @@ include_once ("../protectADM.php");
 
     <h1>Funcionario</h1>
     <a href="formInFun.php" class="btn btn-primary">Adicionar</a> 
-    <a href="formReFun.php" class="btn btn-danger">Remover</a>
+    <button href="formReFun.php" class="btn btn-danger" disabled >Remover</button>
     
     <body class="BodyTable">
         <div class="containerTable">

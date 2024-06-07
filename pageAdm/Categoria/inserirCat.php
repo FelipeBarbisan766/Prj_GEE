@@ -8,7 +8,7 @@
 <body>
     
     <?php
-include('../conexao.php');
+include('../../conexao.php');
 $nome = strtoupper($_POST["nome"]);
 $isActive = True;
 
@@ -26,7 +26,7 @@ if($verificador == true )
     $sql = mysqli_query($conexao,"INSERT INTO categoria(cat_nome,cat_IsActive) VALUES('$nome','$isActive')");
     
     if($sql){
-        header('Location:formInPro.php');
+        header('Location:categoriaAdm.php');
     }else{
         echo "Erro no Insert";
     }

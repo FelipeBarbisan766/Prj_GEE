@@ -6,8 +6,10 @@ body {
 .nomeLogo {
     margin-left: 0px;
     size: 1px;
-    color: white;
     color: rgb(0, 0, 0);
+}
+.fontwhite{
+    color: white !important;
 }
 
 
@@ -239,7 +241,7 @@ p {
     color: rgb(61, 61, 61);
     padding: 16px;
     font-size: 25.7px;
-    border: none;
+
     cursor: pointer;
     border-radius: 5px;
     margin-left: 2rem;
@@ -253,9 +255,12 @@ p {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+}
+.dropCategoria{
     overflow-y: auto;
     height: 8rem;
 }
+
 
 .dropMenu{
     margin-left: 13rem; 

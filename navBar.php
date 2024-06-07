@@ -21,7 +21,7 @@
         <h1 class="nomeLogo">GEE</h1>
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Categorias</button>
-            <div id="myDropdown" class="dropdown-content">
+            <div id="myDropdown" class="dropdown-content dropCategoria" >
                 <a href="\Prj_GEE/lista/lista.php">GERAL</a>
                 <?php
                 include_once ("conexao.php");
@@ -43,15 +43,15 @@
         </div>
         <div class="dropdown ">
             <button onclick="menu()" class="dropbtn dropbtn2"><?php echo $_SESSION['nome'] ?></button>
-            <div id="menuDrop" class="dropdown-content dropdown-content2">
+            <div id="menuDrop" class="dropdown-content">
                 <a href="\Prj_GEE/SobreNois.php">Sobre nós</a>
                 <a href="\Prj_GEE/index.php">Analistic</a>
                 <a href="\Prj_GEE/pageAdm/adm.php">Adm</a>
                 <a href="\Prj_GEE/configuracao/config.php">Configurações</a>
                 <a href="\Prj_GEE/logoff.php">Sair</a>
             </div>
+        <img src="\Prj_GEE/img/user_icon-removebg-preview.png" width="15%">
         </div>
-        <img src="\Prj_GEE/img/user_icon-removebg-preview.png" width="3%">
         <!-- <a class="active" href="Visualizar">Visualizar</a> -->
         <!-- <a href="#about">About</a> -->
     </div>
