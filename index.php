@@ -24,7 +24,7 @@
   include_once ("navBar.php");
   include_once ("protect.php");
   ?>
-  <div class="container overflow-hidden text-center">
+  <div class="container overflow-hidden text-center index">
     <div class="row gx-5">
       <div class="col-6">
         <div class="row gy-5">
@@ -121,10 +121,10 @@
 
 
               <?php
-              $slq = mysqli_query($conexao, "SELECT f.fun_nome as funNome,p.pro_nome as proNome, r.reg_quant as quant,r.reg_data FROM produto as p INNER JOIN registro as r on r.pro_cod=p.pro_cod INNER JOIN funcionario as f on r.fun_cod=f.fun_cod ORDER BY r.reg_data DESC ");
+              $slq = mysqli_query($conexao, "SELECT f.fun_nome as funNome,p.pro_nome as proNome, r.reg_quant as quant,r.reg_data FROM produto as p INNER JOIN registro as r on r.pro_cod=p.pro_cod INNER JOIN funcionario as f on r.fun_cod=f.fun_cod ORDER BY r.reg_data DESC LIMIT 11 ");
               while ($lista = mysqli_fetch_array($slq)) { ?>
                 <tr>
-                  <th scope="row"><?php echo $lista['funNome']; ?></th>
+                  <td><?php echo $lista['funNome']; ?></td>
                   <td><?php echo $lista['proNome']; ?></td>
                   <td><?php echo $lista['quant']; ?></td>
                 </tr>

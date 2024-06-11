@@ -38,7 +38,7 @@
         <div id="divBusca">
             <form action="\Prj_GEE/lista/lista.php" method="post">
                 <input type="text" id="txtBusca" name="buscar" placeholder="" />
-                <input type="submit" value="Buscar" class="btn btn-primary">
+                <input type="submit" value="Buscar" class="btn btn-primary btn-busca">
             </form>
         </div>
         <div class="dropdown ">

@@ -20,7 +20,7 @@
             <h1 class="nomeLogo fontwhite"> <img src="img/logo.png" width="20%"> GEE</h1>
         </div>
         <div>
-            <h1 class="indexTitle">"GESTÃO DE ESTOQUE ESCOLAR"</h1>
+            <h1 class="indexTitle">GESTÃO DE ESTOQUE ESCOLAR</h1>
         </div>
         <a href='login/Login.php' class="btn_login">Login</a>
     </div>

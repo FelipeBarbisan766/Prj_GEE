@@ -22,13 +22,13 @@ include_once ("protectADM.php");
 <div class="container">
 
         
-        <a href="Produto/produtoAdm.php" class="btn btn-primary">Produto</a>
+        <a href="Produto/produtoAdm.php" class="btn btn-primary" id="btnAdm">Produto</a>
     
-    <a href="Categoria/categoriaAdm.php" class="btn btn-primary">Categoria</a>
+    <a href="Categoria/categoriaAdm.php" class="btn btn-primary" id="btnAdm">Categoria</a>
 
-<a href="Funcionario/funcionarioAdm.php" class="btn btn-primary">Funcionario</a>
+<a href="Funcionario/funcionarioAdm.php" class="btn btn-primary" id="btnAdm">Funcionario</a>
 
-<a href="registo.php" class="btn btn-primary">Imprimir Registro</a>
+<a href="registo.php" class="btn btn-primary" id="btnAdm">Imprimir Registro</a>
 
 </div>
 </div>
