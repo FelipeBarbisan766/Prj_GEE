@@ -2,6 +2,7 @@
 <?php
 include_once("../navbar.php")
 ?>
+<a href='../' class="btn_voltar"> <img src="../img/seta_voltar.png" width="45em"> </a>
 <div class="container">
 
     <h1>Historico de retirada</h1>

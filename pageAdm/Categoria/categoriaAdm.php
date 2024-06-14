@@ -3,8 +3,9 @@ include_once ("../../conexao.php");
 include_once ("../../navBar.php");
 include_once ("../protectADM.php");
 ?>
+<a href='../adm.php' class="btn_voltar"> <img src="\Prj_GEE/img/seta_voltar.png" width="45em"> </a>
 <div class="container">
-
+<h1>Categoria</h1>
 <a href="formInCat.php" class="btn btn-primary">Adicionar</a> 
     <a href="formReCat.php" class="btn btn-danger">Remover</a>
     <body class="BodyTable">

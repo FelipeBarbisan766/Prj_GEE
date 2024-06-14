@@ -1,8 +1,7 @@
 /* Global */
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif ;
 }
-
 .nomeLogo {
     margin-left: 0px;
     size: 1px;
@@ -50,15 +49,14 @@ p {
 .indexTitle {
     text-align: center;
     font-size: 43px;
-    color: #ffffff;
+    color: #000000;
     text-shadow: 2.5px 1.5px rgb(142, 138, 138);
-    display:inline !important;
-    margin: 0px 0px 0px 1px;
+    width: 800px;
 }
 
 .btn_login {
     margin-left: 46rem;
-    background: #ffffff;
+    background: #9fbfdf;
     color: rgb(0, 0, 0);
     border-radius: 1rem;
     text-decoration: none;
@@ -68,11 +66,11 @@ p {
 }
 
 .nomeLogoIndex{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 #TituloPrincipal {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin: 3rem 0rem;
     text-align: center;
     font-size: 3rem;
@@ -87,7 +85,7 @@ p {
 }
 
 #index {
-    background-color: #191a22;
+    background-color: #ffffff;
 }
 
 .colum {
@@ -100,13 +98,14 @@ p {
     font-size: 2rem;
     text-align: justify;
     padding: 2rem;
-    color: white;
+    color: rgb(0, 0, 0);
 
 }
 
 
 /* ----------------------------------- */
 /* Login */
+
 .logo {
     margin-top: 7rem;
     margin-left: 96%;
@@ -115,7 +114,7 @@ p {
 .block_input {
     margin: 15% 5%;
     padding: 2% 0% 2% 2%;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     display: flex;
     text-align: center;
     border-radius: 50px;
@@ -156,7 +155,7 @@ p {
     color: rgb(255, 255, 255);
     font-size: 30px;
     padding: 3% 3%;
-    background-color: #0e5394;
+    background-color: #0e5394; 
     /*background-image: linear-gradient(to right, rgb(20, 22, 150),rgb(17, 24, 126)); /* igual a top right */
     border: 1px solid black !important;
     border-width: 2px !important;
@@ -196,7 +195,11 @@ p {
 .btn-busca{
     padding: 6px 13px !important;
     font-size: 25.7px !important;
+    --bs-btn-bg: #9fbfdf !important;
+    border: #9fbfdf !important;
+    --bs-btn-color: black !important;
 }
+
 
 .dropbtn {
     border: none;
@@ -207,6 +210,8 @@ p {
     margin-left: 2rem;
     border-radius: 5px;
 }
+
+
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover,
@@ -228,11 +233,10 @@ p {
     border-radius: 15px;
     height: 45px;
     margin-left:  10rem;
-    font-size: 0.5rem;
 }
 
 #txtBusca::-webkit-input-placeholder{
-    font-size: 22px;
+    font-size: 50px;
 }
 
 .dropdown2{
@@ -297,6 +301,10 @@ p {
     margin: 60px;
 }
 
+
+.inputalerta::-webkit-input-placeholder{
+    font-size: 20px !important;
+}
 
 li {
     list-style-type:decimal;
@@ -375,13 +383,16 @@ li {
     font-size: 22px;
     text-align: center;
 }
-
+.offstock{
+    padding-left: 0px !important;
+}
 .grayBoxLi{
+    text-decoration:line-through;
     list-style: none;
     color: #000000;
 }
 
-.emFalta {
+.alerta {
 
     background-color: #FFDE59;
     /* border: 1px solid black; */
@@ -393,8 +404,7 @@ li {
     width: 4.80rem;
 
 }
-
-.alerta{
+.emFalta{
     background-color: #D84853;
     /* border: 1px solid black; */
     color: #EFF2F4;

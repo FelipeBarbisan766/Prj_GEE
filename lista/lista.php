@@ -23,9 +23,9 @@
               <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Nome</th>
-                    <th scope="col">Quantidade</th>
-                <th scope="col">Descrição</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Descrição</th>
             <th scope="col">Cor</th>
         <th scope="col">Categoria</th>
     </tr>

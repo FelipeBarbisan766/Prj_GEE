@@ -10,9 +10,11 @@ include_once ("../protectADM.php");
     <label for="nome" class="form-label">Nome:</label>
     <input type="text" name="nome" id="nome" class="form-control" required>
     <label for="quant" class="form-label">Quantidade:</label>
-    <input type="text" name="quant" id="quant" class="form-control" required>
+    <input type="number" name="quant" id="quant" class="form-control" required>
     <label for="desc" class="form-label">Descrição:</label>
     <input type="text" name="desc" id="desc" class="form-control">
+    <label for="limit" class="form-label">Definir Alerta:</label>
+    <input type="number" name="limit" id="limit" class="form-control inputalerta" placeholder="O valor padrão é 20">
     <label for="cor" class="form-label">Cor:</label>
     <input type="text" name="cor" id="cor" class="form-control">
     <label for="categ" class="form-label">Categoria:</label>

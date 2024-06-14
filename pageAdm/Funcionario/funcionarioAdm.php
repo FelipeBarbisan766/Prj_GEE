@@ -3,6 +3,7 @@ include_once ("../../conexao.php");
 include_once ("../../navBar.php");
 include_once ("../protectADM.php");
 ?>
+<a href='../adm.php' class="btn_voltar"> <img src="\Prj_GEE/img/seta_voltar.png" width="45em"> </a>
 <div class="container">
 
     <h1>Funcionario</h1>

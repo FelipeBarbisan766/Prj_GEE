@@ -37,7 +37,13 @@ include ('../navBar.php');
             echo 'danger';
         } ?>" value="<?php echo $_GET['tipo']; ?>">
     </form>
-    <?php if (isset($_POST['tipagem'])) {
+    <?php 
+    $sqlproduto = mysqli_query($conexao, "SELECT * FROM produto WHERE pro_cod=".$_GET['cod']."");
+    $produto = mysqli_fetch_array($sqlproduto);
+    if($produto['pro_quant'] <= $produto['pro_limite']){
+        echo '<br><div class="alert alert-warning" role="alert">Alerta. O produto está abaixo de ' . $produto['pro_limite'] . ' </div>';
+    }
+    if (isset($_POST['tipagem'])) {
         if ($_POST['tipagem'] == "retirar") {
             $cod = $_POST["codigo"];
             $fun = $_SESSION["cod"];
@@ -46,12 +52,11 @@ include ('../navBar.php');
             $produtos = mysqli_fetch_array($sqlproduto);
             $quant = $_POST['quant'];
             if ($quant <= $produtos['pro_quant']) {
-                $quantFinal = $produtos['pro_quant'] - $quant;
-                $sqlregistro = mysqli_query($conexao, "INSERT INTO registro(fun_cod,pro_cod,reg_data,reg_quant,reg_tipo) VALUES('$fun','$cod','$data','$quant','Retirado')");
-                $sqlupdate = mysqli_query($conexao, "UPDATE produto SET pro_quant='$quantFinal' WHERE pro_cod='$cod'");
-                echo "<script> window.location.href='lista.php'</script>";
-               // header("Location: lista.php");
-                exit();
+                    $quantFinal = $produtos['pro_quant'] - $quant;
+                    $sqlregistro = mysqli_query($conexao, "INSERT INTO registro(fun_cod,pro_cod,reg_data,reg_quant,reg_tipo) VALUES('$fun','$cod','$data','$quant','Retirado')");
+                    $sqlupdate = mysqli_query($conexao, "UPDATE produto SET pro_quant='$quantFinal' WHERE pro_cod='$cod'");
+                    echo "<script> window.location.href='lista.php'</script>";
+                    exit();
             } else {
                 echo '<br><div class="alert alert-danger" role="alert">Quantidade Invalida. O produto selecionado tem somente ' . $produtos['pro_quant'] . ' no estoque</div>';
             }

@@ -33,7 +33,7 @@
               <h1>Produtos mais retirados da semana</h1>
               <ul>
                 <?php
-                $slq = mysqli_query($conexao, "SELECT p.pro_nome as nome,sum(r.reg_quant),p.pro_IsActive as active FROM registro as r INNER JOIN produto as p on r.pro_cod=p.pro_cod GROUP by r.pro_cod");
+                $slq = mysqli_query($conexao, "SELECT p.pro_nome as nome,sum(r.reg_quant),p.pro_IsActive as active FROM registro as r INNER JOIN produto as p on r.pro_cod=p.pro_cod GROUP by r.reg_quant DESC LIMIT 5");
                 while ($lista = mysqli_fetch_array($slq)) {
                   if ($lista['active'] == true) {
                     ?>
@@ -51,7 +51,7 @@
               <h1>Funcionários que mais retiraram produtos</h1>
               <ul>
                 <?php
-                $slq = mysqli_query($conexao, "SELECT f.fun_nome as nome,SUM(r.reg_quant) FROM registro as r INNER JOIN funcionario as f on r.fun_cod=f.fun_cod GROUP BY r.fun_cod ORDER BY r.reg_quant DESC");
+                $slq = mysqli_query($conexao, "SELECT f.fun_nome as nome,SUM(r.reg_quant) FROM registro as r INNER JOIN funcionario as f on r.fun_cod=f.fun_cod GROUP BY r.fun_cod ORDER BY r.reg_quant DESC LIMIT 5");
                 while ($lista = mysqli_fetch_array($slq)) {
                   ?>
                   <li><?php echo $lista['nome']; ?></li>
@@ -65,22 +65,16 @@
             <div class="p-3 quadradoCinza">
               <h1>Itens em Baixa Quantidade</h1>
               <?php
-              $slq = mysqli_query($conexao, "SELECT p.pro_nome as nome,p.pro_quant as quant,p.pro_IsActive as active,p.pro_limite as limite FROM produto as p WHERE p.pro_quant<=15 and p.pro_quant>=1");
+              $slq = mysqli_query($conexao, "SELECT p.pro_nome as nome,p.pro_quant as quant,p.pro_IsActive as active,p.pro_limite as limite FROM produto as p ORDER BY p.pro_quant ASC LIMIT 5");
               while ($lista = mysqli_fetch_array($slq)) {
                 if ($lista['active'] == true) {
-                  if ($lista['quant'] <= $lista['limite']) {
+                  if ($lista['quant'] <= $lista['limite'] && $lista['quant'] > 0) {
                     ?>
                     <span>
                       <p><?php echo $lista['nome']; ?></p>
-                      <p class="alerta2">Alerta</p>
+                      <p class="alerta">Alerta</p>
                     </span>
-                  <?php } else {
-                    ?>
-                    <span>
-                      <p><?php echo $lista['nome']; ?></p>
-                      <p class="alerta">Em Falta</p>
-                    </span>
-                    <?php
+                  <?php
                   }
                 }
               }
@@ -91,7 +85,7 @@
           <div class="col-6">
             <div class="p-3 quadradoCinza2">
               <h1>Sem estoque</h1>
-              <ul>
+              <ul class="offstock">
                 <?php
                 $slq = mysqli_query($conexao, "SELECT p.pro_nome as nome,p.pro_quant as quant,p.pro_IsActive as active FROM produto as p WHERE p.pro_quant=0 ");
                 while ($lista = mysqli_fetch_array($slq)) {
