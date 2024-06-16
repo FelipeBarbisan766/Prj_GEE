@@ -69,7 +69,7 @@
                 } else {
                     echo '<div class="alert alert-danger" role="alert">
           <h4 class="alert-heading">Falha Ao Logar!</h4>
-          <p>E-mail ou senha incorretas tente novamente!</p>';
+          <p>O Nome ou a senha do usuário estão incorretas, tente novamente!</p>';
                 }
             }
         }

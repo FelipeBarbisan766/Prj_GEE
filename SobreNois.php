@@ -14,7 +14,7 @@
 <body id="index">
     <div class="topnav">
         <div>
-            <h1 class="nomeLogo"> <img src="img/logo.png" width="20%"> GEE</h1>
+            <h1 class="nomeLogoIndex"> <img src="img/logo.png" class="imgLogoIndex" width="15%"> GEE</h1>
         </div>
         <div>
             <h1 class="indexTitle">GESTÃO DE ESTOQUE ESCOLAR</h1>

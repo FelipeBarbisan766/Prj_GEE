@@ -42,8 +42,9 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
     padding: 0px;
+    margin-top: 1rem;
 }
 
 .indexTitle {
@@ -55,7 +56,7 @@ p {
 }
 
 .btn_login {
-    margin-left: 46rem;
+    margin-left: 26rem;
     background: #9fbfdf;
     color: rgb(0, 0, 0);
     border-radius: 1rem;
@@ -65,8 +66,14 @@ p {
 
 }
 
+.imgLogoIndex{
+    display: flex;
+    
+}
+
 .nomeLogoIndex{
     color: rgb(0, 0, 0);
+    display: flex;
 }
 
 #TituloPrincipal {
@@ -107,8 +114,9 @@ p {
 /* Login */
 
 .logo {
-    margin-top: 7rem;
-    margin-left: 96%;
+    margin-top: 12rem;
+    margin-left: 90%;
+    
 }
 
 .block_input {
