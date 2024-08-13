@@ -8,7 +8,8 @@ include_once ("../protectADM.php");
 
     <h1>Funcionario</h1>
     <a href="formInFun.php" class="btn btn-primary">Adicionar</a> 
-    <button href="formReFun.php" class="btn btn-danger" disabled >Remover</button>
+    <a href="formReFun.php" class="btn btn-danger">Remover</a>
+    <a href="formAltFun.php" class="btn btn-success">Alterar senha</a>
     
     <body class="BodyTable">
         <div class="containerTable">
@@ -23,7 +24,7 @@ include_once ("../protectADM.php");
                 <tbody>
                     
                     <?php
-                    $slq = mysqli_query($conexao, "SELECT * FROM funcionario");
+                    $slq = mysqli_query($conexao, "SELECT * FROM funcionario ORDER BY fun_cargo");
                     while ($lista = mysqli_fetch_array($slq)) {
                         if ($lista['fun_IsActive'] == true) {
                             ?>

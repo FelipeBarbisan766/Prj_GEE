@@ -65,7 +65,7 @@
             <div class="p-3 quadradoCinza">
               <h1>Itens em Baixa Quantidade</h1>
               <?php
-              $slq = mysqli_query($conexao, "SELECT p.pro_nome as nome,p.pro_quant as quant,p.pro_IsActive as active,p.pro_limite as limite FROM produto as p ORDER BY p.pro_quant ASC LIMIT 5");
+              $slq = mysqli_query($conexao, "SELECT p.pro_nome as nome,p.pro_quant as quant,p.pro_IsActive as active,p.pro_limite as limite FROM produto as p ORDER BY p.pro_quant ASC");
               while ($lista = mysqli_fetch_array($slq)) {
                 if ($lista['active'] == true) {
                   if ($lista['quant'] <= $lista['limite'] && $lista['quant'] > 0) {
@@ -115,7 +115,7 @@
 
 
               <?php
-              $slq = mysqli_query($conexao, "SELECT f.fun_nome as funNome,p.pro_nome as proNome, r.reg_quant as quant,r.reg_data FROM produto as p INNER JOIN registro as r on r.pro_cod=p.pro_cod INNER JOIN funcionario as f on r.fun_cod=f.fun_cod ORDER BY r.reg_data DESC LIMIT 11 ");
+              $slq = mysqli_query($conexao, 'SELECT f.fun_nome as funNome,p.pro_nome as proNome, r.reg_quant as quant,r.reg_data FROM produto as p INNER JOIN registro as r on r.pro_cod=p.pro_cod INNER JOIN funcionario as f on r.fun_cod=f.fun_cod  WHERE r.reg_tipo="Retirado" ORDER BY r.reg_data DESC LIMIT 11' );
               while ($lista = mysqli_fetch_array($slq)) { ?>
                 <tr>
                   <td><?php echo $lista['funNome']; ?></td>

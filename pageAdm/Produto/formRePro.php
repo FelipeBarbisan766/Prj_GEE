@@ -10,7 +10,11 @@ include_once ("../protectADM.php");
     <select name="cod" id="cod" class="form-select">
         <?php
         include_once ("../conexao.php");
+        if(isset($_GET['cod'])){
+        $slq = mysqli_query($conexao, "SELECT * FROM produto WHERE pro_cod=".$_GET['cod']."");
+        }else{
         $slq = mysqli_query($conexao, "SELECT * FROM produto");
+        }
         while ($produtos = mysqli_fetch_array($slq)) { 
             if($produtos['pro_IsActive']==true){?>
             <option value="<?php echo $produtos['pro_cod']; ?>"><?php echo $produtos['pro_nome']; ?></option>
@@ -18,7 +22,7 @@ include_once ("../protectADM.php");
         
         ; ?>
     </select><br>
-    <a type="button" href="produtoAdm.php" class="btn btn-secondary">Cancelar</a>
-<input type="submit" value="remover" class="btn btn-primary">
+    <input type="submit" value="remover" class="btn btn-primary">
+    <a type="button" href="produtoAdm.php?proAdm='pro'" class="btn btn-secondary">Cancelar</a>
 </form>
 </div>

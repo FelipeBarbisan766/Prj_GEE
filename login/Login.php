@@ -16,6 +16,7 @@
 <body>
     <?php
     include_once ("../conexao.php");
+    mb_internal_encoding('UTF-8');
     ?>
     <a href='../' class="btn_voltar"> <img src="../img/seta_voltar.png" width="45em"> </a>
     <div class="container" id="loginContent">
@@ -48,7 +49,7 @@
                 $nome = $conexao->real_escape_string($_POST['txt_nome']);//codigo para evitar invasão (pode ser retirado se quiser)
                 $senha = $conexao->real_escape_string($_POST['txt_codigo']);
 
-                $nome = strtoupper($nome);
+                $nome = mb_strtoupper($nome);
 
                 $sql_code = "SELECT * FROM funcionario WHERE fun_nome = '$nome' AND fun_senha ='$senha'";
                 $sql_query = $conexao->query($sql_code) or die("falha na execução do codigo");
@@ -67,16 +68,14 @@
                     header('Location: ../index.php');
 
                 } else {
-                    echo '<div class="alert alert-danger" role="alert">
-          <h4 class="alert-heading">Falha Ao Logar!</h4>
-          <p>O Nome ou a senha do usuário estão incorretas, tente novamente!</p>';
+                    echo '<h4>Falha Ao Logar!</h4>
+                    <p>O Nome ou a senha do usuário estão incorretas, tente novamente!</p>';
                 }
             }
         }
         ?>
     </div>
     <img src="../img/logo.png" alt="logo_site" class="logo" width="70em">
-    <!-- o resto eu penso depois  -->
 </body>
 
 </html>

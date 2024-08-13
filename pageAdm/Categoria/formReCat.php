@@ -4,7 +4,7 @@ include_once ("../../navBar.php");
 include_once ("../protectADM.php");
 ?>
 <div class="container">
-
+<h1>Remover Categoria</h1>
     <form action="removeCat.php" method="post">
         <label for="cod" class="form-label">Categorias:</label>
         <select name="cod" id="cod" class="form-select">
@@ -19,7 +19,7 @@ include_once ("../protectADM.php");
 
             ; ?>
         </select><br>
-        <a type="button" href="categoriaAdm.php" class="btn btn-secondary">Cancelar</a>
         <input type="submit" value="remover" class="btn btn-primary">
+        <a type="button" href="categoriaAdm.php" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>

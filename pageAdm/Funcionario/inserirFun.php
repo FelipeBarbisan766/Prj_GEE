@@ -1,6 +1,7 @@
 <?php
 include('../../conexao.php');
-$nome = strtoupper($_POST['nome']);
+mb_internal_encoding('UTF-8');
+$nome = mb_strtoupper($_POST['nome']);
 $cod = $_POST['codigo'];
 $cargo = $_POST['cargo'];
 $isActive = true;

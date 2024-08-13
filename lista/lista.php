@@ -16,6 +16,7 @@
     include_once("../navBar.php");
     include_once ("../conexao.php");
     include_once("../protect.php");
+    mb_internal_encoding('UTF-8');
     ?>
       <div class="container">
 
@@ -38,7 +39,7 @@
                         $slq = mysqli_query($conexao, "SELECT p.pro_cod as cod,p.pro_cor as cor,p.pro_nome as nome,p.pro_quant as quant,p.pro_descricao as descri,c.cat_nome as nomecat,p.pro_IsActive as active,c.cat_IsActive as activecat FROM produto as p INNER JOIN categoria as c on c.cat_cod=p.cat_cod WHERE c.cat_cod=$cod");
                         
                         }elseif(isset($_POST['buscar'])){
-                            $busc = strtoupper($_POST['buscar']);
+                            $busc = mb_strtoupper($_POST['buscar']);
                             $slq = mysqli_query($conexao, "SELECT p.pro_cod as cod,p.pro_cor as cor,p.pro_nome as nome,p.pro_quant as quant,p.pro_descricao as descri,c.cat_nome as nomecat,p.pro_IsActive as active,c.cat_IsActive as activecat FROM produto as p INNER JOIN categoria as c on c.cat_cod=p.cat_cod WHERE p.pro_nome LIKE '%".$busc."%'");
                             
                             }
@@ -56,8 +57,8 @@
                 <td><?php echo $lista['cor']; ?></td>
             <td><?php echo $lista['nomecat']; ?> </td>
         <td>
-            <a href="form.php?cod=<?php echo $lista['cod']; ?>&tipo=adicionar" class="btn btn-primary">adicionar produto</a>
-            <a href="form.php?cod=<?php echo $lista['cod']; ?>&tipo=retirar" class="btn btn-danger">retirar produto</a>
+            <a href="form.php?cod=<?php echo $lista['cod']; ?>&tipo=adicionar" class="btn btn-primary btnAzul">adicionar produto</a>
+            <a href="form.php?cod=<?php echo $lista['cod']; ?>&tipo=retirar" class="btn btn-danger<?php if($lista['quant'] == 0){echo ' disabled" aria-disabled="true';}?>">retirar produto</a>
                             </td>
                         </tr>
                     

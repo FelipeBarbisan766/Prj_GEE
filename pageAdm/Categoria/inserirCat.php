@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
     <?php
 include('../../conexao.php');
-$nome = strtoupper($_POST["nome"]);
+mb_internal_encoding('UTF-8');
+
+$nome = mb_strtoupper($_POST["nome"]);
 $isActive = True;
 
 $search = mysqli_query($conexao,"SELECT * FROM categoria WHERE cat_nome='%$nome%'");
@@ -32,5 +25,3 @@ if($verificador == true )
     }
 }
 ?>
-</body>
-</html>

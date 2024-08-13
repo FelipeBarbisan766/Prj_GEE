@@ -18,6 +18,6 @@ include_once ("../protectADM.php");
     </select><br>
     
     <input type="submit" value="Registrar" class="btn btn-primary">
-    <input type="reset" value="Limpar" class="btn btn-secondary">
+    <a type="button" href="funcionarioAdm.php" class="btn btn-secondary">Cancelar</a>
 </form>
 </div>

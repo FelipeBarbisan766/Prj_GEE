@@ -22,7 +22,7 @@
     include_once("protect.php");
     ?>
     <div class="navbar">
-        <img src="\Prj_GEE/img/Gaming_Logo-removebg-preview.png" width="47rem">
+        <img src="\Prj_GEE/img/Gaming_Logo-removebg-preview.png" width="47rem" class="logoimg">
         <h1 class="nomeLogo">GEE</h1>
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Categorias</button>
@@ -41,23 +41,26 @@
             </div>
         </div>
         <div id="divBusca">
-            <form action="\Prj_GEE/lista/lista.php" method="post">
+            <form action="<?php if(isset($_GET['proAdm'])){echo '\Prj_GEE/pageAdm/Produto/produtoAdm.php';}else{
+                echo '\Prj_GEE/lista/lista.php';
+            } ?>" method="post">
                 <input type="text" id="txtBusca" name="buscar" placeholder="" />
-                <input type="submit" value="Buscar" class="btn btn-primary btn-busca">
+                <input type="submit" value="Buscar" id="busca" class="btn btn-primary btn-busca btnAzul">
             </form>
         </div>
         <div class="dropdown ">
-            <button onclick="menu()" class="dropbtn dropbtn2"><?php echo $_SESSION['nome'] ?></button>
-            <div id="menuDrop" class="dropdown-content">
+            <button onclick="menu()" class="dropbtn dropbtn2" ><?php echo $_SESSION['nome'] ?></button>
+            <div id="menuDrop" class="dropdown-content dropdown-content2">
                 <a href="\Prj_GEE/SobreNois.php">Sobre nós</a>
-                <a href="\Prj_GEE/index.php">Analistic</a>
+                <a href="\Prj_GEE/index.php">Painel de Analise</a>
                 <?php if($_SESSION['cargo'] == 'ADM'){?>
-                    <a href="\Prj_GEE/pageAdm/adm.php">Adm</a>
+                    <a href="\Prj_GEE/pageAdm/adm.php">Controle Administrador</a>
                 <?php } ?>
                 <a href="\Prj_GEE/logoff.php">Sair</a>
             </div>
-        <img src="\Prj_GEE/img/user_icon-removebg-preview.png" width="15%">
+        
         </div>
+        <div class="gap">.</div>
         <!-- <a class="active" href="Visualizar">Visualizar</a> -->
         <!-- <a href="#about">About</a> -->
     </div>

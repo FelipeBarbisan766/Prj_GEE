@@ -19,7 +19,18 @@
         <div>
             <h1 class="indexTitle">GESTÃO DE ESTOQUE ESCOLAR</h1>
         </div>
-        <a href='login/Login.php' class="btn_login">Login</a>
+        <?php 
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        if(!isset($_SESSION['cod'])){ 
+            echo '<a href="login/Login.php" class="btn_login btnAzul">Login</a>';
+            
+            ?>
+        <?php }else{ 
+            echo '<a href="index.php" class="btn_login btnAzul">Voltar</a>'
+            ?>
+        <?php } ?>
     </div>
     <div class="colum">
         <div>

@@ -5,16 +5,16 @@ include_once ("../protectADM.php");
 ?>
 <div class="container">
 
-<h1>Adicionar Produto</h1>
+<h1>Cadastrar Produto</h1>
 <form action="inserirPro.php" method="post">
     <label for="nome" class="form-label">Nome:</label>
     <input type="text" name="nome" id="nome" class="form-control" required>
     <label for="quant" class="form-label">Quantidade:</label>
-    <input type="number" name="quant" id="quant" class="form-control" required>
+    <input type="number" name="quant" id="quant" class="form-control" required min="0" oninput="validity.valid||(value='');"/>
     <label for="desc" class="form-label">Descrição:</label>
     <input type="text" name="desc" id="desc" class="form-control">
     <label for="limit" class="form-label">Definir Alerta:</label>
-    <input type="number" name="limit" id="limit" class="form-control inputalerta" placeholder="O valor padrão é 20">
+    <input type="number" name="limit" id="limit" class="form-control inputalerta" placeholder="O valor padrão é 20" min="0" oninput="validity.valid||(value='');"/>
     <label for="cor" class="form-label">Cor:</label>
     <input type="text" name="cor" id="cor" class="form-control">
     <label for="categ" class="form-label">Categoria:</label>
@@ -29,7 +29,7 @@ include_once ("../protectADM.php");
             <?php }};?>
     </select><br>
     <input type="submit" value="Registrar" class="btn btn-primary">
-    <input type="reset" value="Limpar" class="btn btn-secondary">
+    <a type="button" href="produtoAdm.php?proAdm='pro'" class="btn btn-secondary">Cancelar</a>
 
 </form>
 </div>

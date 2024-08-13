@@ -24,18 +24,18 @@ include ('../navBar.php');
             } ?>
         </select>
         <label for="quant" class="form-label">Quantidade:</label>
-        <input type="number" name="quant" id="quant" class="form-control" required><br>
+        <input type="number" name="quant" id="quant" class="form-control" required min="0" oninput="validity.valid||(value='');"/><br>
 
         <input type="hidden" name="codigo" value="<?php echo $_GET['cod']; ?>">
 
         <input type="hidden" name="tipagem" value="<?php echo $_GET['tipo']; ?>">
 
-        <a type="button" href="lista.php" class="btn btn-secondary">Cancelar</a>
         <input type="submit" class="btn btn-<?php if ($_GET['tipo'] == 'adicionar') {
             echo 'primary';
         } else {
             echo 'danger';
         } ?>" value="<?php echo $_GET['tipo']; ?>">
+        <a type="button" href="lista.php" class="btn btn-secondary">Cancelar</a>
     </form>
     <?php 
     $sqlproduto = mysqli_query($conexao, "SELECT * FROM produto WHERE pro_cod=".$_GET['cod']."");

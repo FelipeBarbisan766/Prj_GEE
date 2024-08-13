@@ -1,15 +1,15 @@
 <?php
 include('../../conexao.php');
 mb_internal_encoding('UTF-8');
+$cod = $_POST['codigo'];
 $nome = mb_strtoupper($_POST["nome"]);
 $quant = $_POST["quant"];
 $desc = mb_strtoupper($_POST["desc"]);
 $categ = $_POST["categ"];
 $cor = mb_strtoupper($_POST["cor"]);
 $limit = $_POST['limit'];
-$isActive = True;
 
-$sql = mysqli_query($conexao,"INSERT INTO produto(pro_nome,pro_quant,pro_descricao,pro_cor,pro_limite,pro_IsActive,cat_cod) VALUES('$nome','$quant','$desc','$cor','$limit','$isActive','$categ')");
+$sql = mysqli_query($conexao,"UPDATE produto SET pro_nome='".$nome."',pro_quant=".$quant.",pro_descricao='".$desc."',cat_cod=".$categ.",pro_cor='".$cor."',pro_limite=".$limit." WHERE pro_cod=".$cod."");
 
 if($sql){
     header('Location:produtoAdm.php?proAdm="pro"');

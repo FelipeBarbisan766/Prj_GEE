@@ -28,7 +28,7 @@ include_once ("protectADM.php");
           <div class="card-body">
             <h5 class="card-title">PRODUTO</h5>
             <p class="card-text">Adição e retirada de produtos</p>
-            <a href="Produto/produtoAdm.php" class="btn btn-primary" id="btnAdm">Acessar</a>
+            <a href="Produto/produtoAdm.php?proAdm='pro'" class="btn btn-primary btnAzul" id="btnAdm">Acessar</a>
           </div>
         </div>
 
@@ -39,7 +39,7 @@ include_once ("protectADM.php");
           <div class="card-body">
             <h5 class="card-title">CATEGORIA</h5>
             <p class="card-text">Adição e remoção de categorias</p>
-            <a href="Categoria/categoriaAdm.php" class="btn btn-primary" id="btnAdm">Acessar</a>
+            <a href="Categoria/categoriaAdm.php" class="btn btn-primary btnAzul" id="btnAdm">Acessar</a>
           </div>
         </div>
       </div>
@@ -50,17 +50,17 @@ include_once ("protectADM.php");
             <h5 class="card-title">FUNCIONARIO</h5>
             <p class="card-text">Adição e remoção de Funcionarios</p>
 
-            <a href="Funcionario/funcionarioAdm.php" class="btn btn-primary" id="btnAdm">Acessar</a>
+            <a href="Funcionario/funcionarioAdm.php" class="btn btn-primary btnAzul" id="btnAdm">Acessar</a>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card" style="width: 18rem;">
-          <img src="\Prj_GEE/img/imprimiradm.png" class="card-img-top" alt="..."  height="250rem">
+          <img src="\Prj_GEE/img/imprimiradm.jpg" class="card-img-top" alt="..."  height="250rem">
           <div class="card-body">
             <h5 class="card-title">REGISTRO</h5>
             <p class="card-text">Registros do histórico de retirada</p>
-            <a href="registo.php" class="btn btn-primary" id="btnAdm">Acessar</a>
+            <a href="registo.php" class="btn btn-primary btnAzul" id="btnAdm">Acessar</a>
           </div>
         </div>
 

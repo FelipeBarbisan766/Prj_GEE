@@ -7,6 +7,9 @@ body {
     size: 1px;
     color: rgb(0, 0, 0);
 }
+.logoimg{
+    margin-left: 50px;
+}
 .fontwhite{
     color: white !important;
 }
@@ -20,6 +23,13 @@ p {
     vertical-align: middle;
     height: 50px;
     width: 50px;
+}
+
+.btnAzul{
+    --bs-btn-bg: #0a6ed2 !important;
+    --bs-btn-border-color: #0a6ed2 !important;
+    --bs-btn-hover-bg: #4eb2f5 !important;
+    --bs-btn-hover-border-color: #4eb2f5 !important;
 }
 /*--------------------------------------------------*/
 /* Responsividade */
@@ -54,11 +64,14 @@ p {
     text-shadow: 2.5px 1.5px rgb(142, 138, 138);
     width: 800px;
 }
-
+.btncad{
+    --bs-btn-padding-x: 1.75rem !important;
+    --bs-btn-padding-y: 0.80rem !important;
+}
 .btn_login {
     margin-left: 26rem;
-    background: #9fbfdf;
-    color: rgb(0, 0, 0);
+    background: #0a6ed2;
+    color: rgb(255, 255, 255);
     border-radius: 1rem;
     text-decoration: none;
     padding: 1rem 3rem;
@@ -200,18 +213,17 @@ p {
     /* Alinhamento vertical */
     
 }
-.btn-busca{
+.btn-busca {
     padding: 6px 13px !important;
     font-size: 25.7px !important;
-    --bs-btn-bg: #9fbfdf !important;
-    border: #9fbfdf !important;
-    --bs-btn-color: black !important;
+    border: none !important;
 }
 
 
 .dropbtn {
     border: none;
-    color: rgb(61, 61, 61);
+    background-color: #0a6ed2;
+    color: rgb(255, 255, 255);
     padding: 9px 16px;
     font-size: 25.7px;
     cursor: pointer;
@@ -224,7 +236,7 @@ p {
 /* Dropdown button on hover & focus */
 .dropbtn:hover,
 .dropbtn:focus {
-    background-color: #60aee2;
+    background-color: #4eb2f5;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -233,14 +245,16 @@ p {
     display: inline-block;
     
 }
-
+.gap{
+    padding: 0px 80px;
+}
 #txtBusca{
     position: flex;
     display: inline-block;
     width: 37rem;
     border-radius: 15px;
     height: 45px;
-    margin-left:  10rem;
+    margin-left: 0px ;
 }
 
 #txtBusca::-webkit-input-placeholder{
@@ -256,13 +270,14 @@ p {
 
 .dropbtn2{
     border: none;
-    color: rgb(61, 61, 61);
-    padding: 16px;
+    color: rgb(255, 255, 255);
+    padding: 9px 16px;
     font-size: 25.7px;
 
     cursor: pointer;
     border-radius: 5px;
     margin-left: 2rem;
+    margin-right: 50px;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -270,13 +285,17 @@ p {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
+    min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    margin-left: 20px;
+}
+.dropdown-content2{
+    margin-left: 40px !important;
 }
 .dropCategoria{
     overflow-y: auto;
-    height: 8rem;
+    height: 15rem;
 }
 
 
@@ -324,7 +343,7 @@ li {
 
 .quadradoAzul {
     /* border: 3px solid red; */
-    background: #66a8e6;
+    background: #0a6ed2;
     color: white;
     border-radius: 10px;
     overflow-y: auto;
@@ -502,8 +521,6 @@ td{
     padding: 2.5rem;
 }
 #btnAdm{
-    background-color: #0d6efd;
-    color: white;
     border-radius: 1rem;
     padding: 0.8rem 2rem;
     text-decoration: none;
